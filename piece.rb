@@ -1,5 +1,4 @@
 class Piece
-	FONT = 'Apple Symbols'
 	BLACK = :black
 	WHITE = :orange
 	attr_accessor :first_move, :is_white
@@ -13,11 +12,11 @@ class Piece
 		@painter = painter
 		@painter.fill(@painter.black)
 		@painter.stroke(@painter.black)
-		@fig = @painter.title(@figure, font: FONT, stroke: @painter.public_send(@is_white ? WHITE : BLACK))
+		@fig = @painter.title(@figure, font: Const::FONT, stroke: @painter.public_send(@is_white ? WHITE : BLACK))
 	end
 
 	def draw x, y
-		@fig.move(x+12, y+20) if @last_pos != [x, y]
+		@fig.move(x+Const::PIECE_FIX_X, y+Const::PIECE_FIX_Y) if @last_pos != [x, y]
 		@last_pos = [x, y]
 	end
 

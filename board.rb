@@ -100,7 +100,7 @@ class Board
 						Board.game_board.promote_to(klass)
 						close
 					end
-					t = title(sign, font: Piece::FONT, left: x+3, top: y+10, stroke: public_send(Board.game_board.turn ? Piece::WHITE : Piece::BLACK))
+					t = title(sign, font: Const::FONT, left: x+Const::PROMO_FIX_X, top: y+Const::PROMO_FIX_Y, stroke: public_send(Board.game_board.turn ? Piece::WHITE : Piece::BLACK))
 				end
 				finish do
 					Board.game_board.promote_to(Queen)

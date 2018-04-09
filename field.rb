@@ -1,3 +1,5 @@
+require 'Const'
+
 class Field
 	SIZE = 70
 
@@ -27,7 +29,7 @@ class Field
 			@r.click do
 				board.clicked(self)
 			end
-			@fog = @painter.para("\u2601", left: @pos[:x]+3, top: @pos[:y]-15, font: Piece::FONT, stroke: @painter.gray, size: SIZE)
+			@fog = @painter.para("\u2601", left: @pos[:x]+Const::FOG_FIX_X, top: @pos[:y]+Const::FOG_FIX_Y, font: Const::FONT, stroke: @painter.gray, size: Const::FOG_SIZE)
 		end
 	end
 
